@@ -33,3 +33,7 @@ def show(id: int):
 
 # To go to Automatic generated FastAPI documentation in Swagger UI
 --> http://127.0.0.1:8000/docs
+
+# To Install all required dependencies at once
+--> pip install -r requirements.txt
+    *** Requirements.txt file should be available to RUN this command.
