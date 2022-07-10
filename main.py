@@ -1,7 +1,7 @@
-from turtle import title
 from fastapi import FastAPI
 from typing import Optional
 from pydantic import BaseModel
+# import uvicorn
 
 app = FastAPI()  # Instance of the FastAPI
 
@@ -50,3 +50,7 @@ class Blog(BaseModel):  # Inheritance
 @app.post('/create')
 def create(request: Blog):
     return (f"{request.title} Blog Created Successfully!")
+
+# Port and Local Host Config
+# if __name__ == "__main__":
+#     uvicorn.run(app, host = "127.0.0.1", port = 9000)
