@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI()  # Instance of the FastAPI
 
 
 @app.get('/')  # decorator
