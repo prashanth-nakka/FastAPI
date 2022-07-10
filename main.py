@@ -1,5 +1,7 @@
+from turtle import title
 from fastapi import FastAPI
 from typing import Optional
+from pydantic import BaseModel
 
 app = FastAPI()  # Instance of the FastAPI
 
@@ -35,3 +37,16 @@ def published_blogs():
 @app.get('/blog/{id}')
 def show(id: int):
     return {"data": {"blog": id}}
+
+# POST METHOD
+
+
+class Blog(BaseModel):  # Inheritance
+    title: str
+    body: str
+    Published: bool
+
+
+@app.post('/create')
+def create(request: Blog):
+    return (f"{request.title} Blog Created Successfully!")
